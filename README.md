@@ -40,12 +40,12 @@ __2.各子流程功用__<br>
 
 
 ● 子流程「03_operationOnWebsite」<br>
-操作瀏覽器到目標網頁後，填寫Formi送出，返回預測結果，由JavaScript程式 (詳見 demo_pad_tst_01.js )擷取輸入資料及預測結果。<br> 
+操作瀏覽器到目標網頁後，填寫Form送出，返回預測結果，由JavaScript程式 (詳見 demo_pad_tst_01.js )擷取輸入資料及預測結果。<br> 
 
 ![avatar](./README_pics/pic_subprocess_03.png)<br><br>
 
 ● 子流程「04_runPythonCmd」<br>
-使用「動作」的「執行 PowerShell指令碼」來執行Python程式 (詳見 demo_pad_tst_01.py)，將JavaScript程式執行結果，作編輯予「顯示訊息」呈現，並儲存成CSV檔 (詳見 predict_report.csv)，最後關閉瀏覽器。<br>
+使用「動作」的「執行 PowerShell 指令碼」來執行Python程式 (詳見 demo_pad_tst_01.py)，將JavaScript程式執行結果作編輯，給予「顯示訊息」呈現，並儲存成CSV檔 (詳見 predict_report.csv)，最後關閉瀏覽器。<br>
 
 ![avatar](./README_pics/pic_subprocess_04.png)<br><br>
 
@@ -53,7 +53,7 @@ __2.各子流程功用__<br>
 
 __3.執行結果 - 最後顯示訊息畫面__<br>
 
-Power Automate開啟瀏覽器(Microsoft Edge)，到網站( 127.0.0.1:7000/login，如上述 [專案django_demo_01](<https://github.com/qinglian1105>) ) ，接著輸入帳密登入進入首頁後，於左側side menu點選「信用評分預測(Credit Scorecards)」選單，即進入目標頁面，填完Form的 7 個變數資料，點擊按鍵「Predict Score」後，將於下方以藍色文字及儀表盤呈現預測結果(分數、評級)，由JavaScript程式擷取輸入資料及預測結果，再由Python程式編輯及寫入CSV檔，返回予「顯示訊息」呈現，按「確定」後關閉網頁，以完成整個流程自動化過程。<br>
+Power Automate開啟瀏覽器(Microsoft Edge)，到網站( 127.0.0.1:7000/login，如上述 [專案django_demo_01](<https://github.com/qinglian1105>) ) ，接著輸入帳密登入進入首頁後，於左側side menu點選「信用評分預測(Credit Scorecards)」選單，即進入目標頁面，填完Form的 7 個變數資料，點擊按鍵「Predict Score」後，將於下方以藍色文字及儀表盤呈現預測結果(分數、評級)，由JavaScript程式擷取輸入資料及預測結果，再由Python程式編輯及寫入CSV檔，返回予「顯示訊息」呈現，按下「確定」後關閉網頁，以完成整個流程自動化過程。<br>
 
 ![avatar](./README_pics/pic_result.png)<br><br>
 

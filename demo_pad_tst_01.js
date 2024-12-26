@@ -1,5 +1,5 @@
-// A simple function to get data from web page
-function pda_js_tst(){  
+// Get data from web page
+function pda_js_tst(){   
 
     // Get data from Form
     var v0 = document.getElementById("annual_inc_bin").value;

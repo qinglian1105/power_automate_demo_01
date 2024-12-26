@@ -1,0 +1,2 @@
+annual_inc_bin,loan_amnt_bin,int_rate_bin,purpose,grade,home_ownership,pub_rec_bankruptcies,score,level
+200000,25000,6.8,home_improvement,B,RENT,Y,537,VeryGood

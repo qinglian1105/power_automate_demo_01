@@ -1,30 +1,64 @@
 # **power_automate_demo_01**
 
-## **RPA: Displaying an example of integrating JavaScript with Power Automate for Web Automation**
+## **RPA: Displaying an example of integrating JavaScript and Python with Power Automate for Web Automation**
 
 ### **Ⅰ. 目的** 
-研調 RPA (Robotic Process Automation)，實作Power Automate Desktop來操作網頁，並在其流程中使用JavaScript擷取內容。<br>
+研調 機器人流程自動化 (Robotic Process Automation, RPA)，實作Power Automate來操作「應用程式」及「網頁」，並在其流程中使用JavaScript擷取內容再由Python處理資料。<br><br>
+
 
 ### **Ⅱ. 主要工具**
-Power Automate Desktop、JavaScript
+Power Automate Desktop、JavaScript、Python<br><br>
 
 ### **Ⅲ. 說明**
 
-● 流程內容：<br>
-在Power Automate Desktop開啓一個「流程」，建立各項「動作」。<br>
-首先，開啟瀏覽器(Microsoft Edge)，到一個網站( 專案django_demo_01 [詳見](<https://github.com/qinglian1105>)) ，接著輸入帳密登入，於左側side menu點選某一選單，在Form填入資料按鍵執行，由執行JavaScript程式擷取輸入資料及預測結果，返回給「顯示訊息」顯示，最後按「確定」後關閉網頁。<br> 
+__1.流程架構__<br>
 
-● 頁面展示：<br>
-【 Power Automate Desktop - 流程頁面 】<br>
-流程由26個「動作」組成，主要有設定變數、瀏覽器自動化項目、JavaScript函數、顯示訊息…等，如下圖所示。<br>
+在Power Automate Desktop新增一個「流程」，建立5個「子流程」，並在其中產生各項「動作」，如下圖所示。<br>
+
 ![avatar](./README_pics/pic_process.png)<br><br>
 
-【 流程執行頁面 - 最後顯示訊息 】<br>
-Power Automate執行至此頁面時(選單-信用評分預測)，填完Form的 7 個變數資料，按「Predict Score」鍵後，將於下方以藍色文字及儀表盤呈現結果(分數、評級)，Power Automate安排 執行JavaScript函數(詳見程式檔 demo_pda_tst_01.js)擷取輸入資料及藍色文字存成變數，再返回予「顯示訊息」顯示內容如下圖所示，按「確定」後關閉網頁以完成整個Process自動化過程。<br>
+
+
+
+__2.各子流程功用__<br>
+
+● 子流程「Main」<br>
+為整個流程的執行步驟，即其他4個子流程依序執行。<br>
+
+![avatar](./README_pics/pic_subprocess_main.png)<br><br>
+
+
+● 子流程「01_dockerStartServices」<br>
+開啟應用程式「Docker Desktop」，啟動相關服務，如：前端網頁、後端API及資料庫…等( 詳見 [專案django_demo_01](<https://github.com/qinglian1105>) )。<br>
+
+![avatar](./README_pics/pic_subprocess_01.png)<br><br>
+
+● 子流程「02_globalVariables」<br>
+為設定所需變數，主要為輸入網頁之資料。<br>
+
+![avatar](./README_pics/pic_subprocess_02.png)<br><br>
+
+
+● 子流程「03_operationOnWebsite」<br>
+操作瀏覽器到目標網頁後，填寫Formi送出，返回預測結果，由JavaScript程式 (詳見 demo_pad_tst_01.js )擷取輸入資料及預測結果。<br> 
+
+![avatar](./README_pics/pic_subprocess_03.png)<br><br>
+
+● 子流程「04_runPythonCmd」<br>
+使用「動作」的「執行 PowerShell指令碼」來執行Python程式 (詳見 demo_pad_tst_01.py)，將JavaScript程式執行結果，作編輯予「顯示訊息」呈現，並儲存成CSV檔 (詳見 predict_report.csv)，最後關閉瀏覽器。<br>
+
+![avatar](./README_pics/pic_subprocess_04.png)<br><br>
+
+
+
+__3.執行結果 - 最後顯示訊息畫面__<br>
+
+Power Automate開啟瀏覽器(Microsoft Edge)，到網站( 127.0.0.1:7000/login，如上述 [專案django_demo_01](<https://github.com/qinglian1105>) ) ，接著輸入帳密登入進入首頁後，於左側side menu點選「信用評分預測(Credit Scorecards)」選單，即進入目標頁面，填完Form的 7 個變數資料，點擊按鍵「Predict Score」後，將於下方以藍色文字及儀表盤呈現預測結果(分數、評級)，由JavaScript程式擷取輸入資料及預測結果，再由Python程式編輯及寫入CSV檔，返回予「顯示訊息」呈現，按「確定」後關閉網頁，以完成整個流程自動化過程。<br>
+
 ![avatar](./README_pics/pic_result.png)<br><br>
 
-__以上，一個簡單Web Automation例子展現Power Automate與JavaScriptn整合。__<br><br>
-
+__以上，一個Web Automation的例子展現Power Automate、JavaScript、Python整合。__
+<br><br><br>
 
 ---
 

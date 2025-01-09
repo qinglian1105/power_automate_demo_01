@@ -56,7 +56,7 @@ Power Automate 開啟應用程式「Docker Desktop」，啟動相關服務(網�
 
 __以上，一個 Web Automation 的例子展現 Power Automate、JavaScript、Python 整合。__
 <br>
-(相似專案 [uipath_demo_01](<https://github.com/qinglian1105/uipath_demo_01>) 或 開源RPA [tagui_demo_01](<https://github.com/qinglian1105/tagui_demo_01>) 請參考)
+(個人相似專案 [uipath_demo_01](<https://github.com/qinglian1105/uipath_demo_01>) 或 open-source RPA [tagui_demo_01](<https://github.com/qinglian1105/tagui_demo_01>) 、 [tagui_demo_02](<https://github.com/qinglian1105/tagui_demo_02>) 請參考)
 <br><br><br>
 
 ---
